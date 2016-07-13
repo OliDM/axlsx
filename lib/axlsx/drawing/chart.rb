@@ -56,7 +56,7 @@ module Axlsx
     # Indicates that colors should be varied by datum
     # @return [Boolean]
     attr_reader :vary_colors
- 
+
     # Configures the vary_colors options for this chart
     # @param [Boolean] v The value to set
     def vary_colors=(v) Axlsx::validate_boolean(v); @vary_colors = v; end
@@ -182,7 +182,7 @@ module Axlsx
     # @param [String] str
     # @return [String]
     def to_xml_string(str = '')
-      str << '<?xml version="1.0" encoding="UTF-8"?>'
+      str << '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
       str << ('<c:chartSpace xmlns:c="' << XML_NS_C << '" xmlns:a="' << XML_NS_A << '" xmlns:r="' << XML_NS_R << '">')
       str << ('<c:date1904 val="' << Axlsx::Workbook.date1904.to_s << '"/>')
       str << ('<c:style val="' << style.to_s << '"/>')
