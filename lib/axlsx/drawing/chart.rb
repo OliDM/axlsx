@@ -218,11 +218,6 @@ module Axlsx
         str << '</a:ln>'
         str << '</c:spPr>'
       end
-      str << '<c:printSettings>'
-      str << '<c:headerFooter/>'
-      str << '<c:pageMargins b="1.0" l="0.75" r="0.75" t="1.0" header="0.5" footer="0.5"/>'
-      str << '<c:pageSetup/>'
-      str << '</c:printSettings>'
       str << '</c:chartSpace>'
     end
 
