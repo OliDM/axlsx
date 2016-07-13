@@ -3,6 +3,11 @@ module Axlsx
   # XML Encoding
   ENCODING = "UTF-8".freeze
 
+
+  XML_NS_MC = "http://schemas.openxmlformats.org/markup-compatibility/2006".freeze
+  XML_NS_MV = "urn:schemas-microsoft-com:mac:vml".freeze
+  XML_NS_C14 = "http://schemas.microsoft.com/office/drawing/2007/8/2/chart".freeze
+
   # spreadsheetML namespace
   XML_NS = "http://schemas.openxmlformats.org/spreadsheetml/2006/main".freeze
 
@@ -385,13 +390,13 @@ module Axlsx
   # @see http://www.codetable.net/asciikeycodes
   pattern = "\x0-\x08\x0B\x0C\x0E-\x1F"
   pattern = pattern.respond_to?(:encode) ? pattern.encode('UTF-8') : pattern
-  
+
   # The regular expression used to remove control characters from worksheets
   CONTROL_CHARS = pattern.freeze
-  
+
   ISO_8601_REGEX = /\A(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?\Z/.freeze
-  
+
   FLOAT_REGEX = /\A[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?\Z/.freeze
-  
+
   NUMERIC_REGEX = /\A[+-]?\d+?\Z/.freeze
 end
